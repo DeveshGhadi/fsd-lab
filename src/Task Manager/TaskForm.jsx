@@ -15,6 +15,7 @@ export const TaskForm = ({addTask}) => {
             <input type="text"
             placeholder='Enter Task' 
             value={task} 
+            style={{ width: "300px", height: "30px", fontSize: "16px" }}
             onChange={(e) => setTask(e.target.value)} />
             <button>Add Task</button>
         </form>
