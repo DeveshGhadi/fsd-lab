@@ -20,8 +20,9 @@ import TaskDetails from "./TaskDetails";
 function App() {
   
   
-    const theme = "dark";
-  const[tasks,setTasks] = useLocalStorge("tasks", []);
+  
+  const[tasks, setTasks] = useLocalStorge("tasks", []);
+  const theme = "light";
 
   const addTask = (task) => {
     setTasks([...tasks, task]);
@@ -30,7 +31,7 @@ function App() {
       console.log("Tasks updated: ", tasks);
     }, [tasks]);
 
-  const [result, setResult] = useState(0);
+  //const [result, setResult] = useState(0);
 
   const handleClick = () => {
     setResult(10 + 20);
@@ -53,7 +54,7 @@ function App() {
       </div>
     </ThemeContext.Provider>
     
-  )
+  );
 }
 
 export default App
