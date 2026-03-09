@@ -47,7 +47,7 @@ function App() {
           <Routes>
             <Route path="/" element={<TaskList tasks={tasks}/>} />
             <Route path="/add" element={<TaskForm addTask={addTask} />} />
-            <Route path="/tasks/:id" element={<TaskDetails tasks={tasks} />} />
+            <Route path="/task/:id" element={<TaskDetails tasks={tasks} />} />
           </Routes>
         </div>
         </BrowserRouter>

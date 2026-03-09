@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import ThemeContext from "./ThemeContext";
 import { Link } from "react-router-dom";
-function TaskList({tasks}) {
+function TaskList({ tasks }) {
 
     const theme = useContext(ThemeContext);
 
@@ -9,15 +9,15 @@ function TaskList({tasks}) {
         <div className="card"
             style={{
                 background: theme === "light" ? "#eee" : "#333",
-                color : theme === "light" ? "#333" : "#fff"
+                color: theme === "light" ? "#333" : "#fff"
             }}>
             <ul>
-                {tasks.map((task, index) => {
+                {tasks.map((task, index) => (
                     <li key={index}>
-                        <Link to={`task/${index}`}>{task}</Link>
+                        <Link to={`/task/${index}`}>{task}</Link>
                         <button className="delete">Delete</button>
                     </li>
-                })}
+                ))}
             </ul>
         </div>
     );
