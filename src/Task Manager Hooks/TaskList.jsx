@@ -1,7 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import ThemeContext from "./ThemeContext";
 import { Link } from "react-router-dom";
 function TaskList({ tasks }) {
+
+    useEffect(() => {
+        fetch("http://localhost:5000/tasks")
+            .then((res) => res.json())
+            .then((data) => setTasks(data))
+            .catch((err) => console.log(err));
+    }, []);
+
+    const [tasks, setTasks] = useState([]);
 
     const theme = useContext(ThemeContext);
 
