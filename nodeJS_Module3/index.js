@@ -5,6 +5,16 @@
 // }, 3000);
 // console.log("end");
 
+//-------------------------------------------------------------
+
+//blocking execution example
+// console.log("Start");
+// for (i = 0; i <= 500; i++) {
+//     console.log(i);
+// }
+// console.log("End");
+
+
 //----------------------------------------------------------------
 
 // const fs = require("fs");
@@ -35,6 +45,6 @@ app.get("/tasks", (req, res) => {
     res.json(tasks);
 });
 
-app.listen(5000,()=>{
+app.listen(5000, () => {
     console.log("Server running on port 5000!!!");
 });
