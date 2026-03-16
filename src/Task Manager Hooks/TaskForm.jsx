@@ -10,6 +10,7 @@ function TaskForm({addTask}) {
         setTask("");
         navigate("/");
     }
+    
     return (
         <form onSubmit={handleSubmit} className="card">
             <input 
