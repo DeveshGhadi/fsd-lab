@@ -9,11 +9,11 @@ const Component3 = () => {
   const { role } = useContext(UserContext);
 
   return (
-    <div style={{ marginTop: '10px', color: '#666', paddingLeft: '15px' }}>
+    <div style={{ marginTop: '10px', color: '#e8e8e8', paddingLeft: '15px' }}>
+      <p>Component 3</p>
       <p>
         System access level: <strong>{role}</strong>
       </p>
-      <small>(Data retrieved directly from Context in Component 3)</small>
     </div>
   );
 };
@@ -46,22 +46,6 @@ export default function Component1() {
         <h2>Welcome, {user}!</h2>
 
         <Component2 />
-
-        {/* Update user dynamically */}
-        <button
-          onClick={() => setUser('Dev')}
-          style={{
-            padding: '10px 15px',
-            marginTop: '10px',
-            cursor: 'pointer',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-          }}
-        >
-          Change User
-        </button>
       </div>
     </UserContext.Provider>
   );

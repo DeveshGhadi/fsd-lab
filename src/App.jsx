@@ -1,58 +1,58 @@
 
 import './App.css'
-import { Counter } from './Counter'
-import { PackingList } from './PackingList'
-import TaskForm from "./Task Manager Hooks/TaskForm";
-import { useState, useEffect } from 'react';
-import TaskList  from './Task Manager Hooks/TaskList';
-import Profile from "./ProfileCard/Profile";
-import EventHandler from './EventHandler';
-import ToggleSwitch from './ToggleSwitch';
-import SubmittedForm from './SubmittedForm';
-import KeyCounter from './KeyCounter';
-import Component1 from './Component1';
-import ThemeContext from './Task Manager Hooks/ThemeContext';
-import useLocalStorge from './Task Manager Hooks/useLocalStorage';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./Navbar";
-import TaskDetails from "./TaskDetails";
+import { TaskProvider } from './Task Manager Application/TaskContext';
+import Navbar from "./Task Manager Application/Navbar";
+import Dashboard from './Task Manager Application/Dashboard';
+import Tasks from './Task Manager Application/Tasks';
+import AddTask from './Task Manager Application/AddTask';
+import Completed from './Task Manager Application/Completed';
+import About from './Task Manager Application/About';
+
 
 function App() {
-  
-  
-  
-  const[tasks, setTasks] = useLocalStorge("tasks", []);
-  const theme = "light";
+  // const[tasks, setTasks] = useLocalStorge("tasks", []);
+  // const theme = "light";
 
-  const addTask = (task) => {
-    setTasks([...tasks, task]);
-  }
-  useEffect (() => {
-      console.log("Tasks updated: ", tasks);
-    }, [tasks]);
+  // const addTask = (task) => {
+  //   setTasks([...tasks, task]);
+  // }
+  // useEffect (() => {
+  //     console.log("Tasks updated: ", tasks);
+  //   }, [tasks]);
 
-  //const [result, setResult] = useState(0);
+  // const [result, setResult] = useState(0);
 
-  const handleClick = () => {
-    setResult(10 + 20);
-  };
+  // const handleClick = () => {
+  //   setResult(10 + 20);
+  // };
 
   return (
-    
-      <ThemeContext.Provider value={theme} >
-      <div className="App">
-        <BrowserRouter>
-        <div className="container">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<TaskList tasks={tasks}/>} />
-            <Route path="/add" element={<TaskForm addTask={addTask} />} />
-            <Route path="/task/:id" element={<TaskDetails tasks={tasks} />} />
-          </Routes>
+   
+            <TaskProvider>
+      <BrowserRouter>
+        <div className="app">
+          <header className="header">
+            <h1>Task Management Application</h1>
+            <h3>31-Devesh Ghadigaonkar</h3>
+            <Navbar />
+          </header>
+
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/tasks" element={<Tasks />} />
+              <Route path="/add" element={<AddTask />} />
+              <Route path="/completed" element={<Completed />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </div>
         </div>
-        </BrowserRouter>
-      </div>
-    </ThemeContext.Provider>
+      </BrowserRouter>
+    </TaskProvider>
+
+      
+
     
   );
 }

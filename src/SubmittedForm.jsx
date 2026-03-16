@@ -7,24 +7,14 @@ const SubmittedForm = () => {
     setInputValue(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent page reload
-
-    if (inputValue.trim() === "") {
-      alert("Please enter something before submitting!");
-    } else {
-      alert(`Form Submitted!\nValue: ${inputValue}`);
-      setInputValue(""); // Clear input after submit
-    }
-  };
 
   return (
     <div style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
+      <h2 style={{ margin: 20 }}>31-Devesh Ghadigaonkar</h2>
       <form
-        onSubmit={handleSubmit}
         style={{ border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}
       >
-        <h3 style={{ marginTop: 0 }}>Feedback Form</h3>
+        <h3 style={{ marginTop: 0 }}>Form</h3>
 
         <input
           type="text"
@@ -38,26 +28,10 @@ const SubmittedForm = () => {
             boxSizing: "border-box",
           }}
         />
-
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            padding: "10px",
-            backgroundColor: "#007bff",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-            fontWeight: "bold",
-          }}
-        >
-          Submit Form
-        </button>
       </form>
 
       {/* Live Preview */}
-      <div style={{ marginTop: "15px", fontSize: "0.9rem", color: "#666" }}>
+      <div style={{ marginTop: "15px", fontSize: "0.9rem", color: "#ffffff" }}>
         <strong>Live Preview:</strong> {inputValue || "Waiting for input..."}
       </div>
     </div>
