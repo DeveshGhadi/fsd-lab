@@ -10,4 +10,8 @@ function notifyUser() {
     console.log("Food is Ready!!!");
 }
 
+<<<<<<< HEAD
 placeOrder(31,"-Devesh Ghadigaonkar", notifyUser);
+=======
+placeOrder(33, notifyUser);
+>>>>>>> 7bbb29e38a1dcea9d850c63b1bd542b4ecbd4c5f

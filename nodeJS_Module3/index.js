@@ -1,27 +1,27 @@
 //non-blocking execution example
-console.log("start");
-setTimeout(() => {
-    console.log("31-Devesh Ghadigaonkar");
-    console.log("Task Completed!");
-}, 3000);
-console.log("end");
+// console.log("start");
+// setTimeout(() => {
+//     console.log("31-Devesh Ghadigaonkar");
+//     console.log("Task Completed!");
+// }, 3000);
+// console.log("end");
 
 //-------------------------------------------------------------
 
 //blocking execution example
 // console.log("Start");
-// for (i = 0; i <= 500; i++) {
+// for (i = 0; i <= 5; i++) {
 //     console.log(i);
 // }
+// console.log("31-Devesh Ghadigaonkar")
 // console.log("End");
 
 
 //----------------------------------------------------------------
 
 // const fs = require("fs");
-
-// fs.writeFileSync("test.txt","Node JS Core Module !!!");
-
+// fs.writeFileSync("test2.txt","Node JS Core Module 31-Devesh Ghadigaonkar !!!");
+// console.log("31-Devesh Ghadigaonkar");
 // console.log("File Created!!");
 
 
