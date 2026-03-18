@@ -1,6 +1,7 @@
 //non-blocking execution example
 // console.log("start");
 // setTimeout(() => {
+//     console.log("31-Devesh Ghadigaonkar");
 //     console.log("Task Completed!");
 // }, 3000);
 // console.log("end");
@@ -9,18 +10,18 @@
 
 //blocking execution example
 // console.log("Start");
-// for (i = 0; i <= 500; i++) {
+// for (i = 0; i <= 5; i++) {
 //     console.log(i);
 // }
+// console.log("31-Devesh Ghadigaonkar")
 // console.log("End");
 
 
 //----------------------------------------------------------------
 
 // const fs = require("fs");
-
-// fs.writeFileSync("test.txt","Node JS Core Module !!!");
-
+// fs.writeFileSync("test2.txt","Node JS Core Module 31-Devesh Ghadigaonkar !!!");
+// console.log("31-Devesh Ghadigaonkar");
 // console.log("File Created!!");
 
 
@@ -36,16 +37,16 @@
 const express = require("express");
 const cors = require("cors");
 
-const app = express();
+// const app = express();
 
-const tasks = [
-    { id: 1, task: "Study React" },
-    { id: 2, task: "Create a Node JS server" }
-];
+// const tasks = [
+//     { id: 1, task: "Study React" },
+//     { id: 2, task: "Create a Node JS server" }
+// ];
 
-app.get("/tasks", (req, res) => {
-    res.json(tasks);
-});
+// app.get("/tasks", (req, res) => {
+//     res.json(tasks);
+// });
 
 app.listen(5000, () => {
     console.log("Server running on port 5000!!!");
