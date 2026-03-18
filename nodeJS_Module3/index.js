@@ -34,8 +34,8 @@
 
 //----------------------------------------------
 // using Express and cors for API creation
-const express = require("express");
-const cors = require("cors");
+// const express = require("express");
+// const cors = require("cors");
 
 // const app = express();
 
@@ -48,9 +48,8 @@ const cors = require("cors");
 //     res.json(tasks);
 // });
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000!!!");
-    console.log("31-Devesh Ghadigaonkar");
-    console.log("http://localhost:5000/tasks");
-
-});
+// app.listen(5000, () => {
+//     console.log("Server running on port 5000!!!");
+//     console.log("31-Devesh Ghadigaonkar");
+//     console.log("http://localhost:5000/tasks");
+// });
