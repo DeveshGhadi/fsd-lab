@@ -66,4 +66,65 @@ const createProduct = async (req, res, next) => {
 }
 
 //deleteProduct
-module.exports = { getAllProducts, getProductsById }
+const deleteProduct = async(req, res, next) => {
+    try{
+        const product = await Product.findByIdAndDelete(req.params.id);
+
+        if(!product){
+            const error = new Error('Product not found');
+            error.statusCode = 404;
+            return next(error);
+        }
+
+        res.status(200).json({
+            success:true,
+            message: "Product deleted successfully!!"
+        });
+    }
+    catch(error){
+        next(error);
+    }
+}
+
+//put -> update product
+const updateProduct = async(req, res, next) => {
+    try{
+        const product = await Product.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators:true, overwrite: true});
+
+        if(!product){
+            const error = new Error('Product not found');
+            error.statusCode = 404;
+            return next(error);
+        }
+
+        res.status(200).json({
+            success:true,
+            message: "Product Updated successfully!!"
+        });
+    }
+    catch(error){
+        next(error);
+    }
+}
+
+//patch -> Partially Update the product
+const patchProduct = async(req,res,next)=>{
+    try{
+        const product = await Product.findByIdAndUpdate(req.params.id, {$set: req.body}, {new:true, runValidators:true});
+      if(!product){
+            const error = new Error('Product not found');
+            error.statusCode = 404;
+            return next(error);
+        }
+
+        res.status(200).json({
+            success:true,
+            message: "Product Patched successfully!!"
+        });
+    }
+    catch(error){
+        next(error);
+    }
+}
+
+module.exports = { getAllProducts, getProductsById, createProduct,deleteProduct, updateProduct,patchProduct }
